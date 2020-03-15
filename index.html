@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lan Hao's personal blog</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+    <script src="//unpkg.com/docsify"></script>
+    <!-- <script src="//unpkg.com/prismjs/components/prism-bash.js"></script> -->
+    <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-apacheconf.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-python.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-typescript.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-java.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-yaml.min.js"></script>
+
+    <!-- medium style image zoom plugin -->
+    <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+
+    <script src="//unpkg.com/docsify-copy-code@2"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="//blog.farmlan.cn">blog</a>
+        <a href="//www.farmlan.cn">home</a>
+    </nav>
+    <div id="app"></div>
+    <script>
+        window.$docsify = {
+            name: 'Lan Hao\'s blog',
+            themeColor: '#EADDBB',
+            logo: '/_media/logo.png',
+            loadNavbar: true,
+            loadSidebar: true,
+            // coverpage: true,
+            repo: 'https://github.com/leolovesmile/leolovesmile.github.io',
+            copyCode: {
+                buttonText: '复制代码',
+                errorText: '复制出错',
+                successText: '复制成功'
+            }
+        }
+    </script>
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+</body>
+
+</html>
