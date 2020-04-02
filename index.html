@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
     <script src="//unpkg.com/docsify"></script>
+    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
     <!-- <script src="//unpkg.com/prismjs/components/prism-bash.js"></script> -->
     <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-apacheconf.min.js"></script>
@@ -21,6 +22,9 @@
     <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
 
     <script src="//unpkg.com/docsify-copy-code@2"></script>
+
+    <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+    <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
 </head>
 
 <body>
@@ -44,6 +48,15 @@
                 successText: '复制成功'
             }
         }
+
+        const gitalk = new Gitalk({
+            clientID: '2ced726a92d361697095',
+            clientSecret: 'c3be2d4dd0e58ec004e558a737c1e1443b77e3d6',
+            repo: 'leolovesmile.github.io',
+            owner: 'leolovesmile',
+            admin: ['leolovesmile '],
+            distractionFreeMode: false
+        })
     </script>
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 </body>
