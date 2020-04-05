@@ -34,7 +34,8 @@ GitHub Pages 从2018年开始提供免费为自定义域名开启 HTTPS 的功�
 除了 Jekyll 还有非常多的第三方的静态模板系统来搭建 GitHub Pages。比如：
 - Node.js 编写的 Hexo
 - Go 编写的 Hugo
-- Python 编写的 Pelican以及更人性化的 Gridea
+- Python 编写的 Pelican以及更人性化的 Gridea  
+
 各自在基础功能之上，实现了更多的特性，比如分析统计、搜索、评论系统、广告、分享系统等。  
 
 目前我使用的是**docsify**。原因是我当前本来就有nodejs和环境，而且docsify的起步非常方便，通过npm安装好`docsify-cli`并初始化目录。
@@ -59,12 +60,13 @@ window.$docsify = {
     }
 }
 ```
-全部内容可以通过在浏览器内查看本页面的源代码。  
+通过在浏览器内查看本页面的源代码，看到的其实基本上就是站点的主要的代码了。  
+
 你可以通过`docsify serve`命令在本地启动一个web server来查看你的site的效果。
 
-作为一个纯前端的系统，所需的所有资源。都是通过 javascript、css 引入进来，或者通过web api实现（比如，你可以使用**github**的**api**来将很多内容集成到你的site上来，而无需任何自建的后端来支持）。而且常用的资源还可以通过[unpkg.com](https://unpkg.com/)的CDN网络来提供。
+作为一个纯前端的系统，所需的所有资源，都是通过 javascript、css 引入进来，或者通过**Web API**实现（比如，你可以使用**github**的**api**来将很多内容集成到你的site上来，而无需任何自建的后端来支持）。而且常用的javascript和css库，还可以藉由[unpkg.com](https://unpkg.com/)的CDN网络来提供更好的访问体验。
 
-目前，你只需要通过组织好下面两个文件的内容来管理好你站点的导航，你的站点便可以初具雏形了。
+而目前，你只需要通过组织好下面两个文件的内容来管理好你站点的导航，你的站点便可以初具雏形了。
 - [_navbar.md](https://docsify.js.org/#/custom-navbar)
 - [_sidebar.md](https://docsify.js.org/#/more-pages?id=sidebar)
 
