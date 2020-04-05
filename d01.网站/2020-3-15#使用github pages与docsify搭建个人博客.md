@@ -29,10 +29,49 @@ GitHub Pages 从2018年开始提供免费为自定义域名开启 HTTPS 的功�
 - 如果在上面一步你选择了`Enforce https`，等待一段时间（通常证书的颁发可能需要几分钟到一天左右），就会发现你的域名的https生效了。
 
 # docsify的使用
+[Github的官网推荐了使用Jekyll](https://help.github.com/en/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll)来架构你的页面系统，Jekyll是一个基于Ruby的静态站点生成器，功能也非常强大，包括支持各种主题、插件、页面结构。但是它需要生成一些结果文件，这种方式在我看来不够简洁维护起来也不够清爽。  
 
+除了 Jekyll 还有非常多的第三方的静态模板系统来搭建 GitHub Pages。比如：
+- Node.js 编写的 Hexo
+- Go 编写的 Hugo
+- Python 编写的 Pelican以及更人性化的 Gridea
+各自在基础功能之上，实现了更多的特性，比如分析统计、搜索、评论系统、广告、分享系统等。  
+
+目前我使用的是**docsify**。原因是我当前本来就有nodejs和环境，而且docsify的起步非常方便，通过npm安装好`docsify-cli`并初始化目录。
 ```bash
 npm i docsify-cli -g
 docsify init ./
-docsify serve docs
 ```
+然后根据其[开发规范](https://docsify.js.org/#/)配置好入口html文件（例如`index.html`）中相关的对象（如`$docsify`）即可：
+```javascript
+window.$docsify = {
+    name: 'Lan Hao\'s blog',
+    themeColor: '#E40010',
+    logo: '/_media/logo.png',
+    loadNavbar: true,
+    loadSidebar: true,
+    // coverpage: true,
+    repo: 'https://github.com/leolovesmile/leolovesmile.github.io',
+    copyCode: {
+        buttonText: '复制代码',
+        errorText: '复制出错',
+        successText: '复制成功'
+    }
+}
+```
+全部内容可以通过在浏览器内查看本页面的源代码。  
+你可以通过`docsify serve`命令在本地启动一个web server来查看你的site的效果。
 
+作为一个纯前端的系统，所需的所有资源。都是通过 javascript、css 引入进来，或者通过web api实现（比如，你可以使用**github**的**api**来将很多内容集成到你的site上来，而无需任何自建的后端来支持）。而且常用的资源还可以通过[unpkg.com](https://unpkg.com/)的CDN网络来提供。
+
+目前，你只需要通过组织好下面两个文件的内容来管理好你站点的导航，你的站点便可以初具雏形了。
+- [_navbar.md](https://docsify.js.org/#/custom-navbar)
+- [_sidebar.md](https://docsify.js.org/#/more-pages?id=sidebar)
+
+后续，如果有时间的话，我会通过更多docsify的插件，来丰富站点的功能，包括：
+
+- 添加评论系统  
+- 添加搜索功能  
+- 添加网站访问统计分析  
+
+会另外再写博文来记录。
