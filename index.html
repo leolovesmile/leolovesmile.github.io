@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
     <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+
+    <script src="//unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
     <!-- <script src="//unpkg.com/docsify"></script> -->
     <!-- <script src="//unpkg.com/prismjs/components/prism-bash.js"></script> -->
     <script src="//unpkg.com/prismjs@1.19.0/prism.js"></script>
@@ -20,11 +22,9 @@
     <script src="//unpkg.com/prismjs/components/prism-yaml.min.js"></script>
 
 
-
     <script src="//unpkg.com/docsify-copy-code@2"></script>
-
-    <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
-    <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <!-- medium style image zoom plugin -->
+    <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
 </head>
 
 <body>
@@ -33,8 +33,7 @@
         <a href="//www.farmlan.cn">home</a>
     </nav>
     <div id="app"></div>
-
-    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <div id='gitalk-container'></div>
     <script>
         window.$docsify = {
             name: 'Lan Hao\'s blog',
@@ -51,17 +50,31 @@
             }
         }
 
-        const gitalk = new Gitalk({
-            clientID: '2ced726a92d361697095',
-            clientSecret: 'c3be2d4dd0e58ec004e558a737c1e1443b77e3d6',
-            repo: 'leolovesmile.github.io',
-            owner: 'leolovesmile',
-            admin: ['leolovesmile '],
-            distractionFreeMode: false
-        })
+        // const gitalk = new Gitalk({
+        //     clientID: '2ced726a92d361697095',
+        //     clientSecret: 'c3be2d4dd0e58ec004e558a737c1e1443b77e3d6',
+        //     repo: 'leolovesmile.github.io',
+        //     owner: 'leolovesmile',
+        //     admin: ['leolovesmile '],
+        //     distractionFreeMode: false
+        // });
+
+        // gitalk.render('gitalk-container');
+
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?6ca9146d11bdadb0ed6841322609b1c4";
+            hm.type = 'text/javascript';
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     </script>
-    <!-- medium style image zoom plugin -->
-    <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
 </body>
+
+
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<!-- <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script> -->
+<!-- <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script> -->
 
 </html>
